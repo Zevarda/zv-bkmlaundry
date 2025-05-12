@@ -31,7 +31,7 @@ You can also change the NPC model, animation, location, and more!
 2. Add to your `server.cfg`:
 
 ```
-ensure moneylaunder
+ensure zv-bkmlaundry
 ```
 
 3. Make sure you have:
