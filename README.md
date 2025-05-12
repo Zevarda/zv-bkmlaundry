@@ -40,8 +40,3 @@ ensure moneylaunder
    * One of: `ox_inventory`, `qb-inventory`, `qs-inventory`
    * One of: `ox_target`, `qb-target`
    * Framework: QBCore or ESX
-
-💬 Perlu template GitHub CI/CD, atau workflow auto-download deps? Join [FiveM Lua GPT Discord](https://discord.gg/Kmt5WJsb3G)
-
-Mau saya bantu branding untuk GitHub repo kamu (icon, banner, docs)?
-```
