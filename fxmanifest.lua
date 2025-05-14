@@ -3,6 +3,7 @@ game 'gta5'
 
 description 'Money Laundering System - Auto Target & Framework'
 author 'zDev'
+version '1.0.1'
 
 shared_scripts {
     '@ox_lib/init.lua',
