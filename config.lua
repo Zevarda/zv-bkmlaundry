@@ -7,6 +7,7 @@ Config.LaunderLocation = {
     model = Config.UsePed and 'g_m_y_famca_01' or 'prop_ld_suitcase_01'
 }
 
+Config.CleanMoneyRate = 0.8 -- 80% from black money to cash
 
 Config.Inventory = 'ox' -- 'ox', 'qb', 'qs'
 
