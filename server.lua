@@ -17,15 +17,21 @@ local function RemoveBlackMoney(source, amount)
 end
 
 local function AddCleanMoney(source, amount)
+    local rate = Config.CleanMoneyRate or 0.8
+    local cleanedAmount = math.floor(amount * rate)
     if Config.Inventory == 'ox' then
-        exports.ox_inventory:AddItem(source, 'money', amount)
+        exports.ox_inventory:AddItem(source, 'money', cleanedAmount)
     elseif Config.Inventory == 'qb' then
         local Player = exports['qb-core']:GetCoreObject().Functions.GetPlayer(source)
-        Player.Functions.AddItem('money', amount)
+        if Player then
+            Player.Functions.AddItem('money', cleanedAmount)
+        end
     elseif Config.Inventory == 'qs' then
-        exports['qs-inventory']:AddItem(source, 'money', amount)
+        exports['qs-inventory']:AddItem(source, 'money', cleanedAmount)
     end
 end
+
+
 
 local function GetBlackMoneyCount(source)
     if Config.Inventory == 'ox' then
@@ -58,9 +64,6 @@ RegisterServerEvent('moneylaunder:convert', function(amount)
     end
 
     RemoveBlackMoney(src, amount)
-
-    Wait(math.floor((amount / 10000) * Config.BaseRate))
-
     AddCleanMoney(src, amount)
 
     TriggerClientEvent('ox_lib:notify', src, {
